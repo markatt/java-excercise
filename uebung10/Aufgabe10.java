@@ -10,8 +10,12 @@ public class Aufgabe10 {
     }
     public static int[ ] erzeugenUndAusfuellen ( ) {
         Random randomNum = new Random();
-        java.util.Scanner eingabe = new java.util.Scanner ( System.in ); System.out.println("Bitte geben Sie die Anzahl der Zahlen: "); 
+        java.util.Scanner eingabe = new java.util.Scanner ( System.in ); 
+        System.out.println("Bitte geben Sie die Anzahl der Zahlen: ");
+
         int anzahlVonZahlen = eingabe.nextInt();
+        System.out.println("Sie haben: " + anzahlVonZahlen + "eingegeben");
+
         int[ ] zahlen = new int[anzahlVonZahlen];
         
         for(int i = 0; i < zahlen.length; i++) {
@@ -28,7 +32,8 @@ public class Aufgabe10 {
                 max = zahlen[i];
             }
         }
-
+        
+        System.out.println("Die größte Zahl beträgt: " + max);
         return max;
     }
     public static double durchschnittRechnen ( int[ ] zahlen ) {
@@ -40,6 +45,7 @@ public class Aufgabe10 {
         }
 
         durchschnitt = summe / zahlen.length;
+        System.out.println("Der Durchschnitt beträgt: " + durchschnitt);
 
         return durchschnitt;
     } 
