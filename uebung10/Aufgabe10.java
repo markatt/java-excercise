@@ -5,7 +5,8 @@ import java.util.Random;
 public class Aufgabe10 {
     public static void main(String[ ] args) {
         int [ ] x = erzeugenUndAusfuellen ( );
-        maximumZahlFinden(x); 
+        maximumZahlFinden(x);
+        durchschnittRechnen(x);
     }
     public static int[ ] erzeugenUndAusfuellen ( ) {
         Random randomNum = new Random();
@@ -31,7 +32,15 @@ public class Aufgabe10 {
         return max;
     }
     public static double durchschnittRechnen ( int[ ] zahlen ) {
-        double durchschnitt = 0; // TODO ...
+        double durchschnitt = 0;
+        double summe = 0; 
+
+        for(int i = 0; i < zahlen.length; i++) {
+            summe += zahlen[i];
+        }
+
+        durchschnitt = summe / zahlen.length;
+
         return durchschnitt;
     } 
 }
