@@ -4,9 +4,34 @@ import java.util.Random;
 
 public class Aufgabe10 {
     public static void main(String[ ] args) {
-        int [ ] x = erzeugenUndAusfuellen ( );
-        maximumZahlFinden(x);
-        durchschnittRechnen(x);
+        java.util.Scanner menueEingabe = new java.util.Scanner(System.in);
+        int [] arr = null;
+        int auswahl;
+        do {
+            System.out.println("Menüpunkt auswählen: ");
+            System.out.println("1. Array erzeugen und Füllen");
+            System.out.println("2. Größte Zahl finden");
+            System.out.println("3. Durchschnitt berechnen");
+            System.out.println("4. Programm beenden");
+
+            auswahl = menueEingabe.nextInt();
+            switch(auswahl){
+                case 1:
+                    arr = erzeugenUndAusfuellen();
+                    break;
+                case 2:
+                    maximumZahlFinden(arr);
+                    break;
+                case 3:
+                    durchschnittRechnen(arr);
+                    break;
+                case 4:
+                    auswahl = 5;
+                    System.out.println("Programm wird beendet");
+            }
+           
+        } while (auswahl < 4 );
+
     }
     public static int[ ] erzeugenUndAusfuellen ( ) {
         Random randomNum = new Random();
@@ -14,14 +39,14 @@ public class Aufgabe10 {
         System.out.println("Bitte geben Sie die Anzahl der Zahlen: ");
 
         int anzahlVonZahlen = eingabe.nextInt();
-        System.out.println("Sie haben: " + anzahlVonZahlen + "eingegeben");
+
+        System.out.println("Sie haben: " + anzahlVonZahlen + " eingegeben");
 
         int[ ] zahlen = new int[anzahlVonZahlen];
         
         for(int i = 0; i < zahlen.length; i++) {
             zahlen[i] = randomNum.nextInt(50);
         }
-        eingabe.close();
         return zahlen; 
     }
     public static int maximumZahlFinden ( int[ ] zahlen ) { 
