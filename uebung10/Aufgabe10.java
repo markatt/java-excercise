@@ -8,11 +8,11 @@ public class Aufgabe10 {
         int [] arr = null;
         int auswahl;
         do {
-            System.out.println("Menüpunkt auswählen: ");
+            System.out.println("\n\nMenüpunkt auswählen: ");
             System.out.println("1. Array erzeugen und Füllen");
             System.out.println("2. Größte Zahl finden");
             System.out.println("3. Durchschnitt berechnen");
-            System.out.println("4. Programm beenden");
+            System.out.println("4. Programm beenden \n\n\n");
 
             auswahl = menueEingabe.nextInt();
             switch(auswahl){
@@ -28,6 +28,7 @@ public class Aufgabe10 {
                 case 4:
                     auswahl = 5;
                     System.out.println("Programm wird beendet");
+                
             }
            
         } while (auswahl < 4 );
