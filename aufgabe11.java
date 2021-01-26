@@ -4,6 +4,7 @@ class Aufgabe11 {
     public static void main(String[] args) {
         int[][] liste = listeErstellen();
         listeAusgeben(liste);
+        besteNoteAusgeben(liste);
     }
 
     public static int[][] listeErstellen() {
@@ -15,18 +16,14 @@ class Aufgabe11 {
 
         eingabe.close();
 
-        /**
-         * @TODO
-         * Add Random nums 100000 999999 to fill 1st column
-         * Add Random grades from 1 to 6 to fill 2nd column
-         */
+        //
 
         for(int i = 0; i < notenListe.length ; i++) {
             Random randNum = new Random();
 
             notenListe[i][0] = randNum.nextInt((1000000 - 100000) + 1) - 100000;
 
-            notenListe[i][1] = randNum.nextInt(7);
+            notenListe[i][1] = randNum.nextInt(7) + 1;
          
         }
         return notenListe;
@@ -34,8 +31,37 @@ class Aufgabe11 {
 
     public static void listeAusgeben(int[][] liste){
         for(int i = 0; i < liste.length; i++) {
-            System.out.println("Matrikelnummer: " + liste[i][0]);
-            System.out.println("Note: " + liste[i][1]);
+            /**
+             * Print only filled array values
+             */
+            if(liste[i][1] != 0) {
+                System.out.println("Matrikelnummer: " + liste[i][0]);
+                System.out.println("Note: " + liste[i][1]);
+            }
         }
+    }
+
+    public static void besteNoteAusgeben(int[][] liste){
+        int [][] bestGrade = new int [liste.length][liste.length];
+
+        bestGrade[0][0] = liste[0][0];
+        bestGrade[0][1] = liste[0][1]; 
+
+        /**
+         * Check for best Grade
+         * If there are more best grades they get pushed into the array
+         */
+        for(int i = 1; i < liste.length; i++) {
+            if(bestGrade[0][1] > liste[i][1]){
+                bestGrade[0][0] = liste[i][0];
+                bestGrade[0][1] = liste[i][1];
+            } else if(bestGrade[0][1] == liste[i][1]){
+                bestGrade[bestGrade.length - 1][0] = liste[i][0];
+                bestGrade[bestGrade.length - 1][1] = liste[i][1];
+            }
+        }
+
+        System.out.println("Die Beste Note ist/sind: ");
+        listeAusgeben(bestGrade);
     }
 }
