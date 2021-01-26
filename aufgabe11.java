@@ -26,8 +26,7 @@ class Aufgabe11 {
             notenListe[i][0] = randNum.nextInt((1000000 - 100000) + 1) - 100000;
 
             notenListe[i][1] = randNum.nextInt(7);
-
-            
+         
         }
         return notenListe;
     }
