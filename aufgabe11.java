@@ -11,6 +11,12 @@ class Aufgabe11 {
         int[][] notenListe = new int[dimension][2];
 
         eingabe.close();
+
+        /**
+         * @TODO
+         * Add Random nums 100000 999999 to fill 1st column
+         * Add Random grades from 1 to 6 to fill 2nd column
+         */
         return notenListe;
     }
 }
