@@ -9,19 +9,21 @@ class Aufgabe11 {
 
     public static int[][] listeErstellen() {
         java.util.Scanner eingabe = new java.util.Scanner(System.in);
-
+        System.out.println("Wie lang soll ihre Liste sein (Zeilen)?");
         int dimension = eingabe.nextInt();
 
         int[][] notenListe = new int[dimension][2];
 
         eingabe.close();
 
-        //
+        /**
+         * @Bug still generates negatives Numbers
+         */
 
         for(int i = 0; i < notenListe.length ; i++) {
             Random randNum = new Random();
 
-            notenListe[i][0] = randNum.nextInt((1000000 - 100000) + 1) - 100000;
+            notenListe[i][0] = randNum.nextInt((999999 - 100000) + 100000);
 
             notenListe[i][1] = randNum.nextInt(7) + 1;
          
@@ -61,7 +63,7 @@ class Aufgabe11 {
             }
         }
 
-        System.out.println("Die Beste Note ist/sind: ");
+        System.out.println("\n\nDie Beste Note ist/sind: ");
         listeAusgeben(bestGrade);
     }
 }
