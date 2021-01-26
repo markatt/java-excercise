@@ -2,7 +2,8 @@ import java.util.Random;
 
 class Aufgabe11 {
     public static void main(String[] args) {
-        listeErstellen();
+        int[][] liste = listeErstellen();
+        listeAusgeben(liste);
     }
 
     public static int[][] listeErstellen() {
@@ -29,5 +30,12 @@ class Aufgabe11 {
          
         }
         return notenListe;
+    }
+
+    public static void listeAusgeben(int[][] liste){
+        for(int i = 0; i < liste.length; i++) {
+            System.out.println("Matrikelnummer: " + liste[i][0]);
+            System.out.println("Note: " + liste[i][1]);
+        }
     }
 }
