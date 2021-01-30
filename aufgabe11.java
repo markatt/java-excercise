@@ -1,10 +1,17 @@
+import java.util.InputMismatchException;
 import java.util.Random;
 
 class Aufgabe11 {
     public static void main(String[] args) {
-        int[][] liste = listeErstellen();
-        listeAusgeben(liste);
-        besteNoteAusgeben(liste);
+            try {
+                int[][] liste = listeErstellen();
+                listeAusgeben(liste);
+                besteNoteAusgeben(liste);
+    
+            } catch (InputMismatchException e) {
+                System.out.println("Bitte geben Sie nur ganze Zahlen an.");
+                System.out.println("Wollen Sie das Programm noch einmal starten? \n Geben Sie 0 für nein und 1 für ja ein.");
+            }
     }
 
     public static int[][] listeErstellen() {
