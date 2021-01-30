@@ -1,3 +1,5 @@
+package uebung11;
+
 import java.util.InputMismatchException;
 import java.util.Random;
 
